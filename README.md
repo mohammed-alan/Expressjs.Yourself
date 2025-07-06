@@ -33,3 +33,6 @@ A simple blog platform built with **Express.js**, **EJS**, and **SQLite** that a
 
 - **Input Validation and Sanitization**  
   Posts and user inputs are validated and cleaned to prevent malicious input.
+
+
+![image](https://github.com/user-attachments/assets/3dc9b191-cb79-422d-af56-406ec7355eb3)

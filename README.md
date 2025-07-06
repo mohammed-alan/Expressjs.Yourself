@@ -1,7 +1,7 @@
 # Expressjs.Yourself
 
 A simple blog platform built with **Express.js**, **EJS**, and **SQLite** that allows users to register, login, create posts, edit and delete their own posts, and view a featured random post on the main page.
-
+Note: This project is primarily backend-focused; the frontend was kept minimal and did not receive significant time or attention.
 ---
 
 ## Tech Stack

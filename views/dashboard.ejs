@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Dashboard - Expressjs.Yourself</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex flex-col bg-gradient-to-br from-blue-100 to-pink-100 dark:from-gray-900 dark:to-gray-800 text-gray-800 dark:text-gray-200 font-sans">
+
+  <!-- Header -->
+  <header class="w-full bg-white dark:bg-gray-900 shadow-md py-4 px-6 flex items-center justify-between">
+    <h2 class="text-2xl font-bold text-blue-600 dark:text-blue-400">
+      <a href="/" class="hover:underline">Expressjs.Yourself</a>
+    </h2>
+    <nav class="space-x-6 text-gray-700 dark:text-gray-300 font-medium">
+      <a href="/create-post" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Create Post</a>
+      <a href="/logout" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex-grow max-w-3xl mx-auto p-6 space-y-8 w-full">
+    <h2 class="text-3xl font-bold mb-6">Welcome <%= user.username %></h2>
+
+    <% if (randomPost) { %>
+  <div class="bg-white/80 dark:bg-gray-900/70 backdrop-blur-md border border-gray-300 dark:border-gray-700 rounded-xl p-6 shadow">
+    <h2 class="text-xl font-bold mb-2">Featured Post</h2>
+    <h3 class="text-lg font-semibold mb-1"><%= randomPost.title %></h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-2"><%= randomPost.body %></p>
+    <p class="text-sm text-right text-gray-500">By <%= randomPost.username %></p>
+  </div>
+<% } %>
+
+    <ul class="space-y-6">
+  <% if (posts.length === 0) { %>
+    <li class="text-gray-500 dark:text-gray-400 text-center">
+      You have not created any posts yet. <a href="/create-post" class="text-blue-600 dark:text-blue-400 hover:underline">Create your first post</a>.
+  <% } %>
+  <% posts.forEach(post => { %>
+    <li>
+      <a href="/post/<%= post.id %>" class="block bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6">
+        <h3 class="text-xl font-semibold text-blue-700 dark:text-blue-400 mb-2">
+          <%= post.title %>
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+          <%= post.body ? post.body.substring(0, 150) + (post.body.length > 150 ? "..." : "") : "" %>
+        </p>
+        <small class="text-gray-500 dark:text-gray-400 block text-right">
+          Posted on <%= new Date(post.createdDate).toLocaleDateString() %>
+        </small>
+      </a>
+    </li>
+  <% }) %>
+</ul>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full bg-white dark:bg-gray-900 shadow-inner py-4 text-center text-gray-600 dark:text-gray-400 text-sm mt-12">
+    <p>© 2025 Expressjs.Yourself</p>
+  </footer>
+  
+</body>
+</html>

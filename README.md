@@ -1,3 +1,5 @@
+![image](https://github.com/user-attachments/assets/3dc9b191-cb79-422d-af56-406ec7355eb3)
+
 # Expressjs.Yourself
 
 A simple blog platform built with **Express.js**, **EJS**, and **SQLite** that allows users to register, login, create posts, edit and delete their own posts, and view a featured random post on the main page.
@@ -36,4 +38,3 @@ Note: This project is primarily backend-focused; the frontend was kept minimal a
   Posts and user inputs are validated and cleaned to prevent malicious input.
 
 
-![image](https://github.com/user-attachments/assets/3dc9b191-cb79-422d-af56-406ec7355eb3)
